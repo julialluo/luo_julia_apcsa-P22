@@ -33,7 +33,7 @@ public class Input
 		doubleOne = keyboard.nextDouble();
 
 
-		System.out.print("Enter a double :: ");
+		System.out.print("Enter a do5uble :: ");
 		doubleTwo = keyboard.nextDouble();
 		
 		
@@ -68,12 +68,12 @@ public class Input
 		
 		System.out.println();
 		System.out.println("float one = " + floatOne );
-		System.out.println("integer two = " + floatTwo );
+		System.out.println("float two = " + floatTwo );
 		
 		
 		System.out.println();
-		System.out.println("integer one = " + intOne );
-		System.out.println("integer two = " + intTwo );
+		System.out.println("short one = " + shortOne );
+		System.out.println("short two = " + shortTwo );
 
 		//add in output for all variables
 
