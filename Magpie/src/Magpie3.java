@@ -30,20 +30,60 @@ public class Magpie3
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.length() == 0)
-		{
+		statement = statement.trim();
+		
+		if (statement.length()==0) {
 			response = "Say something, please.";
 		}
-		else if (findKeyword(statement, "no") >= 0)
-		{
-			response = "Why so negative?";
-		}
-		else if (findKeyword(statement, "mother") >= 0
-				|| findKeyword(statement, "father") >= 0
-				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
+		
+		
+		else if (findKeyword(statement,"mother") >= 0
+				|| findKeyword(statement,"father") >= 0
+				|| findKeyword(statement,"sister") >= 0
+				|| findKeyword(statement,"brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+			
+		}
+		
+		else if (findKeyword(statement,"dog") >= 0
+				|| findKeyword(statement,"cat") >= 0
+				|| findKeyword(statement,"fish") >= 0
+				|| findKeyword(statement,"mouse") >= 0)
+		{
+			response = "Tell me more about your pets.";
+			
+
+		}
+		else if (findKeyword(statement,"Mauro") >= 0)
+		{
+			response = "Interesting, tell me more about your teacher.";
+		}
+		
+		
+		
+		
+		else if (findKeyword(statement,"basketball") >= 0)
+		{
+			response = "Do you play any other sports?";
+		}
+		
+		else if (findKeyword(statement,"piano") >= 0)
+		{
+			response = "Do you play any other instruments?";
+		}
+		
+		else if (findKeyword(statement,"pizza") >= 0)
+		{
+			response = "What are your other favorite foods?";
+		}
+		
+		
+		
+		
+		else if (findKeyword(statement,"no") >= 0)
+		{
+			response = "Why so negative?";
 		}
 		else
 		{
@@ -144,11 +184,11 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
-		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
+		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
-
+		
 		if (whichResponse == 0)
 		{
 			response = "Interesting, tell me more.";
@@ -165,6 +205,15 @@ public class Magpie3
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4)
+		{
+			response = "Are you sure?";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "Wow.";
+		}
+
 
 		return response;
 	}
