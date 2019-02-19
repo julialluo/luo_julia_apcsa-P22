@@ -15,13 +15,19 @@ public class TriangleOne
 
 	public TriangleOne(String s)
 	{
+		word = s;
 	}
 
 	public void setWord(String s)
 	{
+		word = s;
 	}
 
-	public void print( )
+	public void print(String s)
 	{
+		for (int x = s.length(); x>0;x--) {
+			out.println(s.substring(0, x));
+			
+		}
 	}
 }
