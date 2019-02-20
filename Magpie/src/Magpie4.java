@@ -8,7 +8,7 @@
  * @author Laurie White
  * @version April 2012
  */
-public class Magpie3
+public class Magpie4
 {
 	/**
 	 * Get a default greeting
@@ -198,13 +198,9 @@ public class Magpie3
 	
 	
 	private String transformIWantStatement(String statement) {
-		String response = "";
-		if (findKeyword(statement,"I want") >= 0)
-
-		{
-			response = "Would you really be happy if you had it?";
-			
-		}
+		String response = "Would you really be happy if you had it?";
+		return response;
+		
 	}
 	
 	private String transformIYouStatement(String statement)
