@@ -28,7 +28,7 @@ public class RockPaperScissors
 		
 		if (randomopp == 0)
 		{
-			comp
+			compChoice = R;
 		}
 	}
 
