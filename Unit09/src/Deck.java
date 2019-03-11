@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -11,7 +12,8 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private List<Card> cards;
+	//private List<Card> cards;
+	private Card[] cards;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -30,7 +32,20 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		cards = new Card[ranks.length*suits.length];
+		System.out.println(ranks.length + "" + suits.length + "" + values.length);
+		for (int i = 0; i<ranks.length; i++) {
+			{
+				for (int j = 0; j<suits.length; j++) {
+					int cardIndex = (suits.length)*i+j;
+					System.out.println(i+"" + j + "" + cardIndex);
+					cards[cardIndex] = new Card(ranks[i], suits[j], values[i]);
+				}
+			}
+		size = cards.length;
+		System.out.println(Arrays.toString(cards));
+		shuffle();
+		}
 	}
 
 
@@ -39,7 +54,10 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		if (size == 0) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -47,7 +65,7 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size;
 	}
 
 	/**
