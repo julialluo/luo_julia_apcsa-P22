@@ -2,7 +2,6 @@
 //www.apluscompsci.com
 //Name -
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class DoggiesRunner
