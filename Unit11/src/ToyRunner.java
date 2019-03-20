@@ -11,7 +11,7 @@ public class ToyRunner
 		Toy sorry = new Toy("sorry", 1);
 		Toy gijoe = new Toy("gi joe", 5);
 		
-		System.out.println(sorry.toString());
-		System.out.println(gijoe.toString());
+		System.out.println(sorry);
+		System.out.println(gijoe);
 	}
 }
