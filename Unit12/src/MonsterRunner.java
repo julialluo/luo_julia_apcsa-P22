@@ -36,7 +36,10 @@ public class MonsterRunner
 			System.out.println("Monster one is bigger than Monster two");
 		}
 		
-		
+		if (test.namesTheSame(tes)) {
+			System.out.println("Monster one has the same name as Monster two");
+		}
+		else System.out.println("Monster one does not have the same name as Monster two");
 		
 		
 	}
