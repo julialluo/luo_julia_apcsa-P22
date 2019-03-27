@@ -1,7 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * The Deck class represents a shuffled deck of cards.
  * It provides several operations including
@@ -12,7 +8,6 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	//private List<Card> cards;
 	private Card[] cards;
 
 	/**
@@ -31,21 +26,27 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
+	/*
+	public Deck(String[] ranks, String[] suits, int[] values) {
+		ArrayList<Card> cards = new ArrayList<Card>();
+		for (int i = 0; i < ranks.length; i++) {
+			for (int k = 0; k < suits.length; k++) {
+				cards.put(new Card(ranks[i], suits[k], values[i]));
+			}
+		}
+		size = cards.length;
+		shuffle();
+	}
+	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		cards = new Card[ranks.length*suits.length];
-		System.out.println(ranks.length + "" + suits.length + "" + values.length);
-		for (int i = 0; i<ranks.length; i++) {
-			{
-				for (int j = 0; j<suits.length; j++) {
-					int cardIndex = (suits.length)*i+j;
-					System.out.println(i+"" + j + "" + cardIndex);
-					cards[cardIndex] = new Card(ranks[i], suits[j], values[i]);
-				}
+		for (int i = 0; i < ranks.length; i++) {
+			for (int k = 0; k < suits.length; k++) {
+				cards[i*suits.length+k] = new Card(ranks[i], suits[k], values[i]);
 			}
-		size = cards.length;
-		System.out.println(Arrays.toString(cards));
-		shuffle();
 		}
+		size = cards.length;
+		shuffle();
 	}
 
 
@@ -54,10 +55,12 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		if (size == 0) {
+		if (size > 0) {
+			return false;
+		}
+		else {
 			return true;
 		}
-		return false;
 	}
 
 	/**
@@ -96,6 +99,7 @@ public class Deck {
 			return null;
 		}
 	}
+
 	/**
 	 * Generates and returns a string representation of this deck.
 	 * @return a string representation of this deck.
@@ -116,7 +120,7 @@ public class Deck {
 		}
 
 		rtn = rtn + "\nDealt cards: \n";
-		for (int k = cards.length - 1; k >= size; k--) {
+		for (int k = cards.length-1; k >= size; k--) {
 			rtn = rtn + cards[k];
 			if (k != size) {
 				rtn = rtn + ", ";
