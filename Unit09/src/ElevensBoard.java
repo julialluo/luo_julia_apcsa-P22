@@ -120,4 +120,4 @@ public class ElevensBoard extends Board {
 		return foundJack && foundQueen && foundKing;
 	}
 
-	
+}
